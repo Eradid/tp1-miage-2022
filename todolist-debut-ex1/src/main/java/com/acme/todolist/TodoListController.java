@@ -38,8 +38,7 @@ public class TodoListController {
 	@PostMapping("/todos")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public void createTodoItem(@RequestBody TodoItem todoItem) {
-		// Code à compléter
-		// ...
+		// Réponce exercice 1
 		this.todoItemRepository.save(todoItem);
 	}
 
