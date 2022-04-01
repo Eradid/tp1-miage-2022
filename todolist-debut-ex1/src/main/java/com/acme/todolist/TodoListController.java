@@ -1,5 +1,6 @@
 package com.acme.todolist;
 
+import javax.inject.Inject;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -38,6 +39,7 @@ public class TodoListController {
 	public void createTodoItem(@RequestBody TodoItem todoItem) {
 		// Code à compléter
 		// ...
+		this.todoItemRepository.save(todoItem);
 	}
 
 	@GetMapping("/todos")
