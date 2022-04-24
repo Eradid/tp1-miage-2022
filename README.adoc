@@ -109,6 +109,9 @@ Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombe
 
 *Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
 
+L'idée générale de l’architecture hexagonale, est de découpler le coeur métier d’un produit de la partie technique. En effet, l’idée principale est de créer une indépendance (faible couplage) entre la partie métier et la partie technique. Cela a son intérêt puisque l’application va pouvoir évoluer sur la partie technique sans que la partie métier en sois impacté. Mais également à l’inverse où la partie métier peut être modifié sans impacter la partie technique.
+
+
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
 * prend un `TodoItem` au format JSON dans le body (voir exemple de contenu plus haut);
