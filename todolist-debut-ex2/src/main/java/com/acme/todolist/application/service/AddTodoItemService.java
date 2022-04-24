@@ -15,8 +15,12 @@ public class AddTodoItemService implements AddTodoItem {
 
 	//A compléter
 	public AddTodoItemService(UpdateTodoItem updateTodoItem) {
+		this.updateTodoItem = updateTodoItem;
 	}
 
 	//A compléter	
+	public void addTodoItem(TodoItem todoItem) {
+		this.updateTodoItem.storeNewTodoItem(todoItem);
+	}
 
 }

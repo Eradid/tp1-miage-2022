@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.acme.todolist.application.port.in.GetTodoItems;
 import com.acme.todolist.domain.TodoItem;
+import com.acme.todolist.application.port.in.AddTodoItems;
 
 /**
  * Le controlleur Spring MVC qui expose les endpoints REST
@@ -23,12 +24,14 @@ public class TodoListController {
 	
 	private GetTodoItems getTodoItemsQuery;
 	// A compléter
+	private AddTodoItem addTodoItemQuery;
 	
 	
 	@Inject
 	//A compléter
-	public TodoListController(GetTodoItems getTodoItemsQuery ) {
+	public TodoListController(GetTodoItems getTodoItemsQuery, AddTodoItem addTodoItemQuery) {
 		this.getTodoItemsQuery = getTodoItemsQuery;
+		this.addTodoItemQuery = addTodoItemQuery;
 	}
 	
 	@GetMapping("/todos")
@@ -39,8 +42,11 @@ public class TodoListController {
 	
 	// Endpoint de type POST vers "/todos"
 	// A compléter
+	@PostMapping("/todos")
+	@ResponseStatus(HttpStatus.CREATED)
 	public void ajouterItem(@RequestBody TodoItem item) {
-		// A compléter		
+		// A compléter	
+		this.addTodoItemQuery.addTodoItem(item);		
 	}
 	
 	
